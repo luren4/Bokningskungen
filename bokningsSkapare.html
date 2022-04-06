@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+    
+</head>
+<!-- ------------------------SKAPAREN------------------------- -->
+<body>
+
+    <form>
+        <input
+          type="text"
+          class="form-control"
+          id="txtSearch"
+          placeholder="Type in a text"
+        />
+      </form>
+
+    
+
+    <!-- <button id="btn">Create</button> -->
+
+    <div id="container1">Initial text</div>
+
+    <button id="btn">Change divs text</button>
+
+
+
+    <script>
+
+    let searchText = document.getElementById("txtSearch")
+    const divattändra = document.getElementById('container1');
+
+    function doChangeText(text)
+    {
+        divattändra.textContent = text;
+    }
+
+    let nyatexten = ""
+    searchText.onkeydown = async function (event) 
+    {
+        console.log(event.key)
+        
+
+        if (event.key === "Enter") 
+        {
+            event.preventDefault()
+
+            nyatexten = document.getElementById("txtSearch").value
+
+            console.log(nyatexten)
+            doChangeText(nyatexten)    
+        }
+    }
+    export let { exporteratvärde } = nyatexten
+    
+
+    </script>
+</body>
+</html>
